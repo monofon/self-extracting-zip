@@ -1,0 +1,36 @@
+name:                self-extracting-zip
+version:             0.1.0.0
+github:              "monofon/self-extracting-zip"
+license:             BSD3
+author:              "monofon"
+maintainer:          "monofon@tramberend.de"
+
+build-type: Custom
+
+dependencies:
+- base >= 4.7 && < 5
+- containers
+- directory
+- zip
+
+custom-setup:
+  dependencies: 
+  - base >= 4.7 && < 5
+  - bytestring
+  - Cabal
+  - conduit
+  - directory
+  - extra
+  - filepath
+  - Glob
+  - zip
+
+executables:
+  self-extracting-zip:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+
